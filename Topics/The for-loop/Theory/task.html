@@ -1,0 +1,95 @@
+<html>
+ <head></head>
+ <body>
+  <p>Sometimes we need to repeat a block of code a certain number of times. To do this, Java provides the <code class="java">for</code>-loop. <span>This loop is often used to iterate over a range of values or through an array. If the number of iterations or the range borders are known, it is recommended to use the <code class="java">for</code>-loop. If they are unknown, the <code class="java">while</code>-loop may be a preferable solution.</span></p>
+  <h2 style="text-align: center;">The basic for-loop syntax<br></h2>
+  <p>The <code class="java">for</code>-loop has the following basic syntax:</p>
+  <pre><code class="language-java">for (initialization; condition; modification) {
+    // do something
+}</code></pre>
+  <p> Parts of the loop:</p>
+  <ul>
+   <li><b>initialization statement</b> is executed once before the loop begins; usually, loop variables are initialized here;</li>
+   <li><b>condition</b> is a Boolean expression that determines the need for the next iteration; if it's <code class="java">false</code>, the loop terminates;</li>
+   <li><b>modification </b>is a statement that changes the value of the loop variables; it is invoked after each iteration of the loop; usually, it uses <b>increment or </b><b>decrement</b> to modify the loop's variable.</li>
+  </ul>Inside the loop's body, the program can perform any correct Java statements. It can even contain other loops.
+  <br>
+  <p>The order of execution for any for-loop is always the same:</p>
+  <ol>
+   <li>the initialization statement;</li>
+   <li>if the condition is <code class="java">false</code> then terminate the loop;</li>
+   <li>if the condition is <code class="java">true</code>, then loop's body is executed;</li>
+   <li>the modification is performed;</li>
+   <li>go to the stage 2 (condition).</li>
+  </ol>
+  <p>Let's write a loop for printing integer numbers from 0 to 9 in the same line.<br></p>
+  <pre><code class="language-java">int n = 9;
+for (int i = 0; i &lt;= n; i++) {
+    System.out.print(i + " "); // here, space is used to separate numbers
+}</code></pre>
+  <p>The code displays:</p>
+  <pre><code class="language-java">0 1 2 3 4 5 6 7 8 9</code></pre>
+  <p>The variables declared in the initialization statement are visible only inside the scope that includes all parts of the loop: the condition, the body, and the modification. The integer loop's variables are often named as <code class="java">i</code>, <code class="java">j</code>, <code class="java">k</code> or <code class="java">index</code>.</p>
+  <p><b> </b>Here’s another example.<b></b> Let's calculate the sum of the integer numbers from 1 to 10 (inclusive) using the for-loop.</p>
+  <pre><code class="language-java">int startIncl = 1, endExcl = 11;
+
+int sum = 0;
+for (int i = startIncl; i &lt; endExcl; i++) {
+    sum += i;
+}
+
+System.out.println(sum); // it prints "55"</code></pre>
+  <h2 style="text-align: center;">Skipping parts<br></h2>
+  <p>The initialization statement, the condition, and the modification parts are optional, the for loop might not have all of them.</p>
+  <p>It is possible to declare a variable outside the loop:</p>
+  <p><b></b></p>
+  <pre><code class="language-java">int i = 10;
+for (; i &gt; 0; i--) {
+    System.out.print(i + " ");
+}</code></pre>
+  <p>Moreover, it is also possible to write an infinite loop without these parts at all:</p>
+  <pre><code class="language-java">for (;;) {
+    // do something
+}</code></pre>
+  <h2 style="text-align: center;"><b></b>Nested loops</h2>
+  <div>
+   It's possible to nest one for-loop into another for-loop. This approach is used to process multidimensional structures like tables (matrices), data cubes, and so on. 
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   As an example, the following code prints the multiplication table of numbers from 1 to 9 (inclusive).
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">for (int i = 1; i &lt; 10; i++) {
+    for (int j = 1; j &lt; 10; j++) {
+        System.out.print(i * j + "\t");
+    }
+    System.out.println();
+}</code></pre> 
+   <br>
+  </div>
+  <div>
+   It outputs:
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">1   2   3   4   5   6   7   8   9  
+2   4   6   8   10  12  14  16  18  
+3   6   9   12  15  18  21  24  27  
+4   8   12  16  20  24  28  32  36  
+5   10  15  20  25  30  35  40  45  
+6   12  18  24  30  36  42  48  54  
+7   14  21  28  35  42  49  56  63  
+8   16  24  32  40  48  56  64  72  
+9   18  27  36  45  54  63  72  81</code></pre>
+  </div>
+ </body>
+</html>
